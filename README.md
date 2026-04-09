@@ -417,7 +417,7 @@ ISC
 
 For issues, feature requests, or questions:
 - **GitHub**: https://github.com/DAbharat/env-guard
-- **npm Package**: https://www.npmjs.com/package/env-guard
+- **npm Package**: https://www.npmjs.com/package/@dabharat/env-guard
 - **Issues**: https://github.com/DAbharat/env-guard/issues
 
 ## Author
