@@ -2,7 +2,7 @@
   "bin": {
     "env-guard": "./src/cli/index.js"
   },
-  "name": "env-guard",
+  "name": "@dabharat/env-guard",
   "version": "1.0.0",
   "description": "Environment variable validation tool for Node.js applications",
   "author": "DAbharat",
