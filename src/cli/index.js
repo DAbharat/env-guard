@@ -6,6 +6,7 @@ import loadSchema from "../loader/loadSchema.js";
 import fs, { readFileSync } from "fs";
 import path, { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import generateEnv from "../generator/generateEnv.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(
@@ -21,6 +22,7 @@ function parseArgs() {
         help: args.includes("--help") || args.includes("-h"),
         version: args.includes("--version") || args.includes("-v"),
         override: args.includes("--override") || args.includes("-o"),
+        generate: args.includes("--generate") || args.includes("-g"),
         schemaPath: (() => {
             const index = args.indexOf("--schema");
             return index !== -1 && args[index + 1] ? args[index + 1] : "env.schema.js";
@@ -38,7 +40,7 @@ function withTimeout(promise, ms = 3000) {
 }
 
 async function main() {
-    const { debug, quiet, help, version, override, schemaPath } = parseArgs();
+    const { debug, quiet, help, version, override, generate, schemaPath } = parseArgs();
 
     if (help) {
         console.log(`
@@ -54,6 +56,7 @@ Options:
   -o, --override    Override existing env variables
   -h, --help        Show help
   -v, --version     Show version
+  -g, --generate    Generate schema file
 `);
         process.exit(0);
     }
@@ -61,6 +64,16 @@ Options:
     if (version) {
         console.log(`env-guard version: ${pkg.version}`);
         process.exit(0);
+    }
+
+    if(generate) {
+        const schema = await withTimeout(loadSchema({ schemaPath, debug }));
+        const generated = generateEnv( schema, ".env.example" );
+        if(generated) {
+            process.exit(0);
+        } else {
+            process.exit(1);
+        }
     }
 
     let result;
