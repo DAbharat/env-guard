@@ -1,8 +1,8 @@
 # env-guard
 
-[![npm version](https://img.shields.io/npm/v/env-guard.svg)](https://www.npmjs.com/package/env-guard)
+[![npm version](https://img.shields.io/npm/v/%40dabharat%2Fenv-guard.svg)](https://www.npmjs.com/package/@dabharat/env-guard)
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
-[![Node.js Version](https://img.shields.io/node/v/env-guard.svg)](https://nodejs.org/)
+[![Node.js Version](https://img.shields.io/node/v/%40dabharat%2Fenv-guard.svg)](https://nodejs.org/)
 
 A lightweight, production-ready environment variable validation tool for Node.js applications. Validate environment variables against a schema before your application starts, generate `.env.example` templates, and ensure type safety.
 
