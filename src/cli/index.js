@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import validateEnv from "../validator/validate";
-import loadEnv from "../loader/loadEnv";
-import loadSchema from "../loader/loadSchema";
+import validateEnv from "../validator/validate.js";
+import loadEnv from "../loader/loadEnv.js";
+import loadSchema from "../loader/loadSchema.js";
 import fs, { readFileSync } from "fs";
 import path, { dirname, join } from "path";
 import { fileURLToPath } from "url";
