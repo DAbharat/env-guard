@@ -22,25 +22,25 @@ A lightweight, production-ready environment variable validation tool for Node.js
 ### From npm
 
 ```bash
-npm install env-guard
+npm install @dabharat/env-guard
 ```
 
 Or as a dev dependency:
 
 ```bash
-npm install --save-dev env-guard
+npm install --save-dev @dabharat/env-guard
 ```
 
 ### Run CLI
 
-Global:
+Via npx:
 ```bash
-env-guard --help
+npx @dabharat/env-guard --help
 ```
 
-Or via npx:
+Or if installed globally:
 ```bash
-npx env-guard --help
+env-guard --help
 ```
 
 ## Quick Start
@@ -354,7 +354,7 @@ export default {
     "dev": "env-guard --debug && node --watch src/server.js"
   },
   "dependencies": {
-    "env-guard": "^1.0.0"
+    "@dabharat/env-guard": "^1.0.0"
   }
 }
 ```
@@ -417,7 +417,7 @@ ISC
 
 For issues, feature requests, or questions:
 - **GitHub**: https://github.com/DAbharat/env-guard
-- **npm Package**: https://www.npmjs.com/package/env-guard
+- **npm Package**: https://www.npmjs.com/package/@dabharat/env-guard
 - **Issues**: https://github.com/DAbharat/env-guard/issues
 
 ## Author
